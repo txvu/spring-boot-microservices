@@ -15,10 +15,10 @@ public class MovieCatalogServiceApplication {
 		return new RestTemplate();
 	}
 
-	@Bean
-	public WebClient.Builder builder() {
-		return WebClient.builder();
-	}
+//	@Bean
+//	public WebClient.Builder builder() {
+//		return WebClient.builder();
+//	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(MovieCatalogServiceApplication.class, args);
