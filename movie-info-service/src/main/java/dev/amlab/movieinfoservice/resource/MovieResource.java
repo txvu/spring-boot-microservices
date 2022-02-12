@@ -11,7 +11,7 @@ public class MovieResource
 {
 	@RequestMapping("/{movieId}")
 	public Movie getMovieInfo(@PathVariable("movieId") String movieId) {
-		System.out.println("Return a Movie object");
-		return new Movie(movieId, "> Movie name from Movie Service");
+		System.out.println("> Return a Movie object");
+		return new Movie(movieId, "Movie name from Movie Service");
 	}
 }
