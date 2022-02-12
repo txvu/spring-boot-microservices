@@ -1,20 +1,21 @@
 package dev.amlab.moviecatalogservice.resource;
 
 import dev.amlab.moviecatalogservice.models.CatalogItem;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collections;
 import java.util.List;
 
-import static java.util.Collection.*;
-import static java.util.Collections.singletonList;
-
 @RestController
+@RequestMapping("/catalog")
 public class MovieCatalogResource
 {
-	public List<CatalogItem> getCatalog(String userId) {
+	@RequestMapping("/{userId}")
+	public List<CatalogItem> getCatalog(@PathVariable("userId") String userId) {
 		return Collections.singletonList(
-				new CatalogItem("Bright", "test", 4)
+				new CatalogItem("Ironman", "test", 4)
 		);
 	}
 }
