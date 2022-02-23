@@ -31,7 +31,7 @@ public class MovieCatalogResource
 	{
 
 
-		UserRating userRating = restTemplate.getForObject("http://localhost:8300/ratingsdata/users/" + userId, UserRating.class);
+		UserRating userRating = restTemplate.getForObject("http://ratings-data-service/ratingsdata/users/" + userId, UserRating.class);
 
 		System.out.println("> Return a Catalog object");
 
@@ -39,7 +39,7 @@ public class MovieCatalogResource
 		// For each movie ID, call movie info service and get details
 		// Put them all together
 		return userRating.getUserRating().stream().map(rating -> {
-			Movie movie = restTemplate.getForObject("http://localhost:8200/movies/" + rating.getMovieId(), Movie.class);
+			Movie movie = restTemplate.getForObject("http://movie-info-service/movies/" + rating.getMovieId(), Movie.class);
 
 //			Movie movie = webClientBuilder.build()
 //					.get()
