@@ -13,13 +13,14 @@ import org.springframework.web.reactive.function.client.WebClient;
 @EnableEurekaClient
 public class MovieCatalogServiceApplication {
 
-	@Bean
-	@LoadBalanced
+	@Bean // Make this object global and final
+	@LoadBalanced // Make this server discover other servers based on Eureka
 	public RestTemplate getRestTemplate() {
 		return new RestTemplate();
 	}
 
-//	@Bean
+	//	Another method to make API call
+	//	@Bean
 //	public WebClient.Builder builder() {
 //		return WebClient.builder();
 //	}
