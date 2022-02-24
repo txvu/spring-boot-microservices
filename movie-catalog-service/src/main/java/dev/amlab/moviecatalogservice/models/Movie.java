@@ -1,34 +1,41 @@
 package dev.amlab.moviecatalogservice.models;
 
-public class Movie
-{
+public class Movie {
 	private String movieId;
 	private String name;
+	private String description;
 
-	public Movie()
-	{
+	public Movie() {
+
 	}
 
-	public Movie(String movieId, String name)
-	{
+	public Movie(String movieId, String name, String description) {
 		this.movieId = movieId;
 		this.name = name;
+		this.description = description;
 	}
 
-	public String getMovieId()
-	{
+	public String getMovieId() {
 		return movieId;
 	}
-	public void setMovieId(String movieId)
-	{
+
+	public void setMovieId(String movieId) {
 		this.movieId = movieId;
 	}
-	public String getName()
-	{
+
+	public String getName() {
 		return name;
 	}
-	public void setName(String name)
-	{
+
+	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }

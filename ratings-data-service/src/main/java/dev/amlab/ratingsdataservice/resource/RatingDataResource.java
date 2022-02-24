@@ -24,8 +24,8 @@ public class RatingDataResource
 	{
 
 		List<Rating> ratings = Arrays.asList(
-				new Rating("1234-from-rating-service", 4),
-				new Rating("5678-from-rating-service", 3)
+				new Rating("123", 4),
+				new Rating("550", 3)
 		);
 
 		System.out.println("> Return a UserRating object");
