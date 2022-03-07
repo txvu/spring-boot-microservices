@@ -1,6 +1,6 @@
 package dev.amlab.moviecatalogservice.resource;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+//import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import dev.amlab.moviecatalogservice.models.CatalogItem;
 import dev.amlab.moviecatalogservice.models.Movie;
 import dev.amlab.moviecatalogservice.models.Rating;
@@ -33,7 +33,7 @@ public class MovieCatalogResource
 	private DiscoveryClient discoveryClient;
 
 	@RequestMapping("/{userId}")
-	@HystrixCommand(fallbackMethod = "getFallbackCatalog")
+//	@HystrixCommand(fallbackMethod = "getFallbackCatalog")
 	public List<CatalogItem> getCatalog(@PathVariable("userId") String userId)
 	{
 

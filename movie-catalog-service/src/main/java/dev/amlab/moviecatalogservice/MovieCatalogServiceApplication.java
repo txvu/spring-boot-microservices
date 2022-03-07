@@ -13,7 +13,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 @SpringBootApplication
 @EnableEurekaClient
-@EnableCircuitBreaker
+//@EnableCircuitBreaker
 public class MovieCatalogServiceApplication {
 
 	@Bean // Make this object global and final
