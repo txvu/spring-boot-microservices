@@ -38,7 +38,7 @@ public class MovieCatalogResource
 	{
 
 
-		UserRating userRating = restTemplate.getForObject("http://ratings-data-service/ratingsdata/users/" + userId, UserRating.class);
+		UserRating userRating = getUserRating(userId);
 
 		System.out.println("> Return a Catalog object");
 
@@ -62,6 +62,12 @@ public class MovieCatalogResource
 //		return Collections.singletonList(
 //				new CatalogItem("Ironman", "test", 4)
 //		);
+	}
+
+	// put fallback annotation here
+	private UserRating getUserRating(String userId)
+	{
+		return restTemplate.getForObject("http://ratings-data-service/ratingsdata/users/" + userId, UserRating.class);
 	}
 
 	public List<CatalogItem> getFallbackCatalog(@PathVariable("userId") String userId)
