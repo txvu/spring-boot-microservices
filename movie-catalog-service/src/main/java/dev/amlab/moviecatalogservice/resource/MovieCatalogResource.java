@@ -33,7 +33,7 @@ public class MovieCatalogResource
 	private DiscoveryClient discoveryClient;
 
 	@RequestMapping("/{userId}")
-	@HystrixCommand
+	@HystrixCommand(fallbackMethod = "getFallbackCatalog")
 	public List<CatalogItem> getCatalog(@PathVariable("userId") String userId)
 	{
 
@@ -62,5 +62,10 @@ public class MovieCatalogResource
 //		return Collections.singletonList(
 //				new CatalogItem("Ironman", "test", 4)
 //		);
+	}
+
+	public List<CatalogItem> getFallbackCatalog(@PathVariable("userId") String userId)
+	{
+		return Arrays.asList(new CatalogItem("No movie", "No description", 0));
 	}
 }
